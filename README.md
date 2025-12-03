@@ -1,97 +1,84 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+## TaskMaster - Intelligent To-Do App
+A robust, feature-rich mobile To-Do application built with React Native CLI and TypeScript. This app features secure User Authentication, real-time cloud syncing via Firebase, and a custom "Smart Sort" algorithm that prioritizes tasks based on urgency and importance.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Features
 
-## Step 1: Start Metro
+1.User Authentication: Secure Sign Up & Login using Firebase Auth (Email/Password).
+2.Real-time Database: Instant data syncing across devices using Firestore.
+3.Task Management: Create, Read, Update, and Delete (CRUD) tasks.
+4.Task Details: Add titles, descriptions, categories, priorities, and deadlines.
+5.Status Tracking: Mark tasks as Active or Completed.
+6.Smart Sorting Algorithm: A custom logic that calculates an "Urgency Score" combining Priority (High/Medium/Low) and Time-to-Deadline to auto-sort the most critical tasks to the top.
+7.Advanced UI: Clean, modern interface using react-native-vector-icons and distinct color coding for priorities.
+8.Filtering: Filter tasks by Status (All/Active/Completed) or Priority.
+9.Date Picker: Native Android/iOS date and time selection.
+10.Project Architecture: Scalable folder structure using the Feature-First pattern and Redux Toolkit.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Tech Stack
+Framework: React Native CLI (v0.73+)
+Language: TypeScript
+State Management: Redux Toolkit (@reduxjs/toolkit, react-redux)
+Backend: Firebase Authentication & Cloud Firestore
+Navigation: React Navigation (Native Stack)
+UI Components: react-native-vector-icons, @react-native-community/datetimepicker
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## The "Smart Sort" Algorithm
+To satisfy the "Mix Algorithm" requirement, the app uses a weighted scoring system:
+Score = (PriorityWeight * Multiplier) - (TimeUntilDeadline)
 
-```sh
-# Using npm
-npm start
+1.Priority Weights: High (3), Medium (2), Low (1).
+2.Logic:
+High priority tasks get a massive score boost.
+Tasks closer to the deadline reduce the score less than tasks far away.
+Result: A "High Priority" task due tomorrow will always appear above a "Low Priority" task due today.
 
-# OR using Yarn
-yarn start
-```
 
-## Step 2: Build and run your app
+## Installation & Setup
+Follow these steps to run the project locally.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Prerequisites
+Node.js (>= 18)
+Java Development Kit (JDK 17)
+Android Studio (for Android Emulator)
+Xcode (for iOS Simulator - Mac only)
 
-### Android
+### Steps
+1. Clone the repository
 
-```sh
-# Using npm
-npm run android
+git clone https://github.com/your-username/TodoMasterNew.git
+cd TodoMasterNew
 
-# OR using Yarn
-yarn android
-```
+2. Install Dependencies
 
-### iOS
+npm install
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+3. Firebase Setup 
+Create a project in the Firebase Console.
+Enable Authentication (Email/Password provider).
+Enable Cloud Firestore (Create database in Test Mode).
+Add an Android App with package name: com.todomasternew.
+Download google-services.json and place it in android/app/
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+4. Run on Android
 
-```sh
-bundle install
-```
+npx react-native run-android
 
-Then, and every time you update your native dependencies, run:
+5. Run on iOS (Mac only)
 
-```sh
-bundle exec pod install
-```
+cd ios && pod install && cd ..
+npx react-native run-ios
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### Screenshots
 
-```sh
-# Using npm
-npm run ios
+1. Login Screen
 
-# OR using Yarn
-yarn ios
-```
+<img width="412" height="727" alt="Image" src="https://github.com/user-attachments/assets/21c77baa-3e85-475b-854b-221fc91a7f23" />
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+2.  Home Screen
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+<img width="439" height="769" alt="Image" src="https://github.com/user-attachments/assets/24fc6d74-3c0d-4641-975b-1e64ff7f0569" />
 
-## Step 3: Modify your app
+3 . Add Task Screen
 
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+<img width="432" height="771" alt="Image" src="https://github.com/user-attachments/assets/47d451c0-b7d0-4d24-ae2b-f9895b833338" />
