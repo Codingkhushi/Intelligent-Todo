@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "463502497178",
+    "project_id": "todoassignment-ca5db",
+    "storage_bucket": "todoassignment-ca5db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463502497178:android:4d31c211a0e726d72b5623",
+        "android_client_info": {
+          "package_name": "com.todomasternew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBjzedNJ8P0rqlA0lBgoSTfBDWGHXq0Pk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463502497178:android:d1035bea143373e62b5623",
+        "android_client_info": {
+          "package_name": "company.todomaster"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBjzedNJ8P0rqlA0lBgoSTfBDWGHXq0Pk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
